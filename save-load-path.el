@@ -1,5 +1,5 @@
 ;;;; save-load-path.el --- save load-path and reuse it to test
-;; Time-stamp: <2010-05-21 07:44:03 rubikitch>
+;; Time-stamp: <2010-05-21 07:52:17 rubikitch>
 
 ;; Copyright (C) 2010  rubikitch
 
@@ -24,14 +24,16 @@
 
 ;;; Commentary:
 ;;
-;; 
+;; Prepare `load-path' for testing in emacs -Q.
+;; First, save your `load-path' in your .emacs.
+;; Then, invoke emacs with command:
+;;   $ emacs -Q -l ~/.emacs.d/saved-load-path.el
+;; It is ready for all emacs lisp programs you have!
 
 ;;; Commands:
 ;;
 ;; Below are complete command list:
 ;;
-;;  `load-load-path'
-;;    Load saved `load-path'.
 ;;
 ;;; Customizable Options:
 ;;
@@ -79,15 +81,12 @@
     (insert
      (prin1-to-string `(setq load-path ',load-path)))
     (write-region (point-min) (point-max) save-load-path-file)))
-(defun load-load-path ()
-  "Load saved `load-path'."
-  (interactive)
-  (load save-load-path-file))
 
 (defun save-load-path-initialize ()
   "Initialize `save-load-path'."
   (add-hook 'after-init-hook 'save-load-path))
 
+;; (bg0 "emacs -Q -l ~/.emacs.d/saved-load-path.el")
 (provide 'save-load-path)
 
 ;; How to save (DO NOT REMOVE!!)
