@@ -1,5 +1,5 @@
 ;;;; save-load-path.el --- save load-path and reuse it to test
-;; Time-stamp: <2010-05-21 07:41:05 rubikitch>
+;; Time-stamp: <2010-05-21 07:44:03 rubikitch>
 
 ;; Copyright (C) 2010  rubikitch
 
@@ -48,6 +48,7 @@
 ;; And the following to your ~/.emacs startup file.
 ;;
 ;; (require 'save-load-path)
+;; (save-load-path-initialize)
 ;;
 ;; No need more.
 
