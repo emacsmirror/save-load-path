@@ -1,5 +1,5 @@
 ;;;; save-load-path.el --- save load-path and reuse it to test
-;; Time-stamp: <2010-05-21 07:52:17 rubikitch>
+;; Time-stamp: <2010-05-21 07:53:52 rubikitch>
 
 ;; Copyright (C) 2010  rubikitch
 
@@ -68,12 +68,10 @@
 
 ;;; Code:
 
-(eval-when-compile (require 'cl))
 (defgroup save-load-path nil
   "save-load-path"
   :group 'emacs)
 
-(defvar anything-statistics-hash nil)
 (defvar save-load-path-file "~/.emacs.d/saved-load-path.el")
 (defun save-load-path ()
   "Save `load-path' to file `save-load-path-file'."
