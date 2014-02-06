@@ -1,6 +1,6 @@
 ;;; save-load-path.el --- save load-path and reuse it to test
 
-;; Time-stamp: <2013-12-29 04:49:07 rubikitch>
+;; Time-stamp: <2014-02-06 21:14:05 rubikitch>
 
 ;; Copyright (C) 2010  rubikitch
 
@@ -76,6 +76,7 @@
 (defvar save-load-path-file "~/.emacs.d/saved-load-path.el")
 (defun save-load-path ()
   "Save `load-path' to file `save-load-path-file'."
+  (interactive)
   (with-temp-buffer
     (insert
      (let (print-level print-length)
